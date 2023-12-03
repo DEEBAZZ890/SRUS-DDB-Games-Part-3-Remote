@@ -1,0 +1,12 @@
+# .gitignore
+# Ignore the .idea directory
+.idea/
+# Ignore the virtual environment
+venv/
+# Ignore other unnecessary files
+*.pyc
+*.pyo
+__pycache__/
+*.swp
+*.swo
+.DS_Store
