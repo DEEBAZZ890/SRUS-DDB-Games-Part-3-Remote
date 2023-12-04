@@ -74,6 +74,7 @@ class Player:
 
     @staticmethod
     def sort_players_descending(players: list['Player']):
+        """Takes a list of Player objects and sorts them in descending order using an Insertion Sort Algorithm"""
         for i in range(1, len(players)):
             current_player = players[i]
             next_slot = i - 1

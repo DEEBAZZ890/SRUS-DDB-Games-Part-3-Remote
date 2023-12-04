@@ -10,6 +10,7 @@ class TestPlayerClass(unittest.TestCase):
         self.sample_password = "someones password"
         self.player = Player(self.test_uid, self.test_name)
 
+        # List of player objects for the sorting test
         self.test_player_list = [
             Player("10472204", "John"),
             Player("29543305", "Brayden"),
@@ -18,6 +19,7 @@ class TestPlayerClass(unittest.TestCase):
             Player("11111111", "Alex")
         ]
 
+        # Using the score setter to set the scores for the test_player_list player objects
         self.test_player_list[0].score = 30
         self.test_player_list[1].score = 20
         self.test_player_list[2].score = 25
@@ -97,6 +99,7 @@ class TestPlayerClass(unittest.TestCase):
         self.assertTrue(player1 >= player2)
 
     def test_sort_players_descending(self):
+        """Test that sorting method correctly sorts the list of players in descending order"""
         sorted_list = sorted(self.test_player_list, key=lambda x: x.score, reverse=True)
         Player.sort_players_descending(self.test_player_list)
         self.assertEqual(self.test_player_list, sorted_list)
