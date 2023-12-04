@@ -84,7 +84,7 @@ class PlayerList:
         else:
             self._head.previous_player = None
 
-    def delete_middle_node_by_key(self, key: str) -> None:
+    def delete_node_by_key_excluding_ends(self, key: str) -> None:
         """Searches from the second node to the tail and deletes the matching player by key."""
         player_node = self._head.next_player
 
@@ -120,4 +120,4 @@ class PlayerList:
             self.delete_tail_node()
             return
 
-        self.delete_middle_node_by_key(key)
+        self.delete_node_by_key_excluding_ends(key)
