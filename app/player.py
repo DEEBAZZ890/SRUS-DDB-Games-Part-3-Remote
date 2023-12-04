@@ -35,26 +35,22 @@ class Player:
         return f'CLASS: {class_name}(UID: {self.uid!r}, NAME: {self.name!r})'
 
     def __eq__(self, other: 'Player') -> bool:
-        if not isinstance(other, Player):
-            return NotImplemented
         return self.score == other.score
 
     def __ne__(self, other: 'Player') -> bool:
-        return not self.__eq__(other)
+        return self.score != other.score
 
     def __lt__(self, other: 'Player') -> bool:
-        if not isinstance(other, Player):
-            return NotImplemented
         return self.score < other.score
 
     def __le__(self, other: 'Player') -> bool:
-        return self.__lt__(other) or self.__eq__(other)
+        return self.score <= other.score
 
     def __gt__(self, other: 'Player') -> bool:
-        return not self.__le__(other)
+        return self.score > other.score
 
     def __ge__(self, other: 'Player') -> bool:
-        return not self.__lt__(other)
+        return self.score >= other.score
 
     def add_password(self, password: str) -> None:
         """Takes a password as a string and from it, generate a hash that is stored for the player"""
